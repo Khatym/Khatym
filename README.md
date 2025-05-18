@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jokic vs SGA: Who Runs the West?</title>
@@ -21,9 +20,7 @@
       color: #ffffff;
     }
     img {
-      width: 100%;
       border-radius: 10px;
-      margin: 15px 0;
     }
     .ad-banner, .native-banner {
       text-align: center;
@@ -46,39 +43,52 @@
       height: 24px;
       margin-right: 10px;
     }
-    .poll {
-      background-color: #2c2c2c;
+    .poll-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2a2a2a;
       padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    .team {
       text-align: center;
+      width: 48%;
     }
-    .poll button {
-      background-color: #1877f2;
-      color: white;
+    .team img {
+      width: 100%;
+      max-width: 150px;
+    }
+    .vote-button {
+      background-color: #4caf50;
       border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 6px;
+      padding: 10px 16px;
+      color: white;
+      font-size: 14px;
+      border-radius: 8px;
       cursor: pointer;
+      margin-top: 10px;
     }
-    .poll-results {
-      margin-top: 20px;
-      text-align: left;
-    }
-    .poll-bar {
+    .vote-bar {
+      margin-top: 10px;
+      height: 10px;
       background: #444;
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
-      margin-bottom: 8px;
     }
-    .poll-bar-inner {
-      background: #1877f2;
-      height: 20px;
-      text-align: right;
-      color: #fff;
-      padding-right: 5px;
-      line-height: 20px;
+    .vote-fill {
+      height: 100%;
+      background: #4caf50;
+    }
+    @media (max-width: 768px) {
+      .poll-container {
+        flex-direction: column;
+      }
+      .team {
+        width: 100%;
+        margin-bottom: 15px;
+      }
     }
   </style>
 </head>
@@ -96,45 +106,37 @@
       };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/6a8b8392a37323947b7e9c9b315ca281/invoke.js"></script>
-  </div>  <!-- Poll Section -->  <div class="poll">
-    <h2>On a scale of 1 to 10, how confident are you in your team tonight?</h2>
-    <div id="poll-options"></div>
-    <div id="poll-results" class="poll-results" style="display:none;"></div>
-  </div>  <h1>Jokic vs SGA: Who Really Runs the West?</h1>
-  <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/203999.png" alt="Nikola Jokic">
-  <p>Tonight’s clash between the Denver Nuggets and the Oklahoma City Thunder isn’t just another regular-season game — it’s a battle for Western Conference supremacy...</p>
-  <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/1628983.png" alt="Shai Gilgeous-Alexander">
-  <p><strong>Shai Gilgeous-Alexander</strong> has elevated his game...</p>  <h2>Tonight’s Showdown</h2>
-  <p>Both teams are hungry...</p>  <!-- Native Banner Ad -->  <div class="native-banner">
+  </div>  <!-- Poll Section -->  <div class="poll-container">
+    <div class="team">
+      <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" alt="Denver Nuggets">
+      <button class="vote-button">Win</button>
+      <div class="vote-bar"><div class="vote-fill" style="width: 58%;"></div></div>
+      <p>58%</p>
+    </div>
+    <div class="team">
+      <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" alt="OKC Thunder">
+      <button class="vote-button">Win</button>
+      <div class="vote-bar"><div class="vote-fill" style="width: 42%;"></div></div>
+      <p>42%</p>
+    </div>
+  </div>  <h1>Jokic vs SGA: Who Really Runs the West?</h1>  <p>Tonight’s clash between the Denver Nuggets and the Oklahoma City Thunder isn’t just another regular-season game — it’s a battle for Western Conference supremacy, and at the center of it are two MVP-caliber talents: Nikola Jokic and Shai Gilgeous-Alexander.</p>  <p><strong>Nikola Jokic</strong>, the 2-time MVP and Finals MVP, is redefining the center position. His stats this season speak volumes:</p>
+  <ul>
+    <li><strong>26.4 PPG</strong> (Points Per Game)</li>
+    <li><strong>12.4 RPG</strong> (Rebounds Per Game)</li>
+    <li><strong>9.0 APG</strong> (Assists Per Game)</li>
+    <li>61% FG, 35% 3PT, 82% FT</li>
+  </ul>  <p>But it’s not just numbers. Jokic orchestrates Denver’s offense like a point guard. His vision, footwork, and leadership make the Nuggets contenders night in, night out.</p>  <p><strong>Shai Gilgeous-Alexander</strong> has elevated his game to new heights. At only 25, SGA is leading the Thunder with poise, control, and scoring mastery:</p>
+  <ul>
+    <li><strong>30.1 PPG</strong></li>
+    <li><strong>5.5 RPG</strong></li>
+    <li><strong>6.2 APG</strong></li>
+    <li>54% FG, 36% 3PT, 87% FT</li>
+  </ul>  <p>SGA's footwork, clutch plays, and perimeter defense have turned OKC into a top-three seed in the West. He's no longer an underdog — he's the face of the Thunder and one of the league's top closers.</p>  <h2>Tonight’s Showdown</h2>  <p>Both teams are hungry. The Nuggets, led by Jokic’s surgical brilliance, want to prove they’re still the kings of the West. The Thunder, behind SGA’s scoring storm and young core, aim to dethrone the champs.</p>  <p>This game could very well determine who holds the mental edge heading into the playoffs. Will Jokic’s experience prevail? Or will SGA's breakout season steal the spotlight?</p>  <!-- Native Banner Ad -->  <div class="native-banner">
     <script async="async" data-cfasync="false" src="//pl26659972.profitableratecpm.com/6f7e351969652b406af11cfd3b9c735f/invoke.js"></script>
     <div id="container-6f7e351969652b406af11cfd3b9c735f"></div>
-  </div>  <!-- Facebook Subscribe Button -->  <a class="facebook-follow" href="https://www.facebook.com/share/1ATEmYa5jX/" target="_blank">
+  </div>  <p>One thing is certain: fans are in for a show. Jokic vs SGA isn't just stats — it’s about style, swagger, and control of the Western Conference.</p>  <!-- Facebook Subscribe Button -->  <a class="facebook-follow" href="https://www.facebook.com/share/1ATEmYa5jX/" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
     Follow our NBA News page!
-  </a>
-</div>
-<script>
-  const pollOptions = document.getElementById("poll-options");
-  const pollResults = document.getElementById("poll-results");
-  let votes = Array(10).fill(0);function renderPoll() { for (let i = 1; i <= 10; i++) { const btn = document.createElement("button"); btn.textContent = i; btn.onclick = () => { votes[i - 1]++; showResults(); }; pollOptions.appendChild(btn); } }
-
-function showResults() { pollOptions.style.display = "none"; pollResults.style.display = "block"; pollResults.innerHTML = "<h3>Results:</h3>";
-
-const totalVotes = votes.reduce((a, b) => a + b, 0);
-
-votes.forEach((vote, index) => {
-  const percent = totalVotes ? Math.round((vote / totalVotes) * 100) : 0;
-  pollResults.innerHTML += `
-    <div>${index + 1} - ${percent}%</div>
-    <div class="poll-bar">
-      <div class="poll-bar-inner" style="width:${percent}%">${vote}</div>
-    </div>
-  `;
-});
-
-}
-
-renderPoll(); </script>
-
+  </a></div>
 </body>
 </html>
