@@ -70,6 +70,10 @@
       cursor: pointer;
       margin-top: 10px;
     }
+    .vote-button:disabled {
+      background-color: #777;
+      cursor: not-allowed;
+    }
     .vote-bar {
       margin-top: 10px;
       height: 10px;
@@ -109,15 +113,15 @@
   </div>  <!-- Poll Section -->  <div class="poll-container">
     <div class="team">
       <img src="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg" alt="Denver Nuggets">
-      <button class="vote-button">Win</button>
-      <div class="vote-bar"><div class="vote-fill" style="width: 58%;"></div></div>
-      <p>58%</p>
+      <button class="vote-button" onclick="vote('denver')" id="vote-denver">Win</button>
+      <div class="vote-bar"><div class="vote-fill" id="bar-denver" style="width: 0%;"></div></div>
+      <p id="percent-denver">0%</p>
     </div>
     <div class="team">
       <img src="https://cdn.nba.com/logos/nba/1610612760/global/L/logo.svg" alt="OKC Thunder">
-      <button class="vote-button">Win</button>
-      <div class="vote-bar"><div class="vote-fill" style="width: 42%;"></div></div>
-      <p>42%</p>
+      <button class="vote-button" onclick="vote('okc')" id="vote-okc">Win</button>
+      <div class="vote-bar"><div class="vote-fill" id="bar-okc" style="width: 0%;"></div></div>
+      <p id="percent-okc">0%</p>
     </div>
   </div>  <h1>Jokic vs SGA: Who Really Runs the West?</h1>  <p>Tonight’s clash between the Denver Nuggets and the Oklahoma City Thunder isn’t just another regular-season game — it’s a battle for Western Conference supremacy, and at the center of it are two MVP-caliber talents: Nikola Jokic and Shai Gilgeous-Alexander.</p>  <p><strong>Nikola Jokic</strong>, the 2-time MVP and Finals MVP, is redefining the center position. His stats this season speak volumes:</p>
   <ul>
@@ -137,6 +141,35 @@
   </div>  <p>One thing is certain: fans are in for a show. Jokic vs SGA isn't just stats — it’s about style, swagger, and control of the Western Conference.</p>  <!-- Facebook Subscribe Button -->  <a class="facebook-follow" href="https://www.facebook.com/share/1ATEmYa5jX/" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
     Follow our NBA News page!
-  </a></div>
+  </a>
+</div>
+<script>
+  let denverVotes = parseInt(localStorage.getItem('denverVotes') || '0');
+  let okcVotes = parseInt(localStorage.getItem('okcVotes') || '0');function updateUI() { const total = denverVotes + okcVotes; const denverPercent = total > 0 ? Math.round((denverVotes / total) * 100) : 0; const okcPercent = total > 0 ? 100 - denverPercent : 0;
+
+document.getElementById('bar-denver').style.width = denverPercent + '%';
+document.getElementById('bar-okc').style.width = okcPercent + '%';
+document.getElementById('percent-denver').innerText = denverPercent + '%';
+document.getElementById('percent-okc').innerText = okcPercent + '%';
+
+}
+
+function vote(team) { if (localStorage.getItem('voted')) return; if (team === 'denver') denverVotes++; else if (team === 'okc') okcVotes++;
+
+localStorage.setItem('denverVotes', denverVotes);
+localStorage.setItem('okcVotes', okcVotes);
+localStorage.setItem('voted', '1');
+
+document.getElementById('vote-denver').disabled = true;
+document.getElementById('vote-okc').disabled = true;
+
+updateUI();
+
+}
+
+if (localStorage.getItem('voted')) { document.getElementById('vote-denver').disabled = true; document.getElementById('vote-okc').disabled = true; }
+
+updateUI(); </script>
+
 </body>
 </html>
